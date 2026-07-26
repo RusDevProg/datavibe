@@ -1,7 +1,7 @@
 from fastapi import FastAPI
-from app.services.ai_service import AIService
 from fastapi.middleware.cors import CORSMiddleware
 from app.routes import upload, analyze, chat
+import os
 
 app = FastAPI(
     title="DataVibe API",
@@ -9,6 +9,7 @@ app = FastAPI(
     version="1.0.0"
 )
 
+# CORS
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
@@ -17,6 +18,7 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+# Роуты
 app.include_router(upload.router, prefix="/api", tags=["Upload"])
 app.include_router(analyze.router, prefix="/api", tags=["Analyze"])
 app.include_router(chat.router, prefix="/api", tags=["Chat"])
