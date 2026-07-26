@@ -1,0 +1,21 @@
+# Переменные окружения
+.env
+.env.local
+.env.*.local
+
+# Зависимости
+node_modules/
+venv/
+__pycache__/
+
+# Собранные файлы
+dist/
+build/
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
